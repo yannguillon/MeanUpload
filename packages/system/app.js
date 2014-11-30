@@ -5,6 +5,7 @@
  */
 var Module = require('meanio').Module,
   favicon = require('serve-favicon'),
+  busboy = require('connect-busboy'),
   express = require('express');
 
 var SystemPackage = new Module('system');
@@ -30,6 +31,9 @@ SystemPackage.register(function(app, auth, database) {
 
   // Adding robots and humans txt
   app.use(express.static(__dirname + '/public/assets/static'));
+
+  // busyboy middleware for files upload
+  app.use(busboy());
 
   return SystemPackage;
 });
