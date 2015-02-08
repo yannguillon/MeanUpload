@@ -1,0 +1,12 @@
+<section data-ng-controller="UploadController" data-ng-init="findOne()">
+    <h2>{{file.name}}</h2>
+    <div ng-show="file.displayType == displayEnum.IMAGE">
+    <p>Image preview</p>
+        <img style="max-height:130px"  ng-src="{{file.path}}"/>
+    </div>
+    <h3><strong>Creation date :</strong> <em>{{file.created | date:'medium'}}</em></h3>
+    <h3><strong>Size :</strong> <em>{{file.size}}</em></h3>
+    <h3><strong>Format :</strong> <em>{{file.type}}</em></h3>
+    <h3><strong>By :</strong> <em>{{getUser(file)}}</em></h3>
+    <a ng-href="{{file.path}}" class="btn btn-lg btn-primary">Download</a>
+</section>

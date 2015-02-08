@@ -3,7 +3,7 @@
 angular.module('mean.upload').config(['$stateProvider',
     function($stateProvider) {
         $stateProvider.state('upload example page', {
-            url: '/upload/example',
+            url: '/upload/',
             templateUrl: 'upload/views/index.html'
         });
 
@@ -18,11 +18,8 @@ angular.module('mean.upload').config(['$stateProvider',
         });
 
         $stateProvider.state('file by id', {
-            url: '/uploads/:fileUrl',
-            templateUrl: 'upload/views/view.html',
-            resolve: {
-                loggedin: checkLoggedin
-            }
+            url: '/upload/:fileUrl',
+            templateUrl: 'upload/views/view.html'
         });
     }
 ]);

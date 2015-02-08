@@ -7,10 +7,10 @@ module.exports = function(Upload, app, auth, database) {
 
     app.route('/upload/create')
         .post(uploads.create);
-    app.route('/uploads/:fileUrl')
-        .post(uploads.show);
+    app.route('/upload/:fileUrl')
+        .get(uploads.show);
 
-    app.get('/upload/example/render', function(req, res, next) {
+    app.get('/upload/', function(req, res, next) {
         Upload.render('index', {
             package: 'upload'
         }, function(err, html) {
@@ -18,4 +18,7 @@ module.exports = function(Upload, app, auth, database) {
             res.send(html);
         });
     });
+
+    app.param('fileUrl', uploads.file);
+
 };

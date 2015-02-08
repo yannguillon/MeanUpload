@@ -18,9 +18,9 @@ Upload.register(function(app, auth, database) {
 
     //We are adding a link to the main menu for all authenticated users
     Upload.menus.add({
-        title: 'upload example page',
+        title: 'Upload a file',
         link: 'upload example page',
-        roles: ['authenticated'],
+        roles: ['authenticated', 'anonymous'],
         menu: 'main'
     });
 

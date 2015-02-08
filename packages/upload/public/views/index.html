@@ -2,20 +2,7 @@
 <div  data-ng-controller="UploadController" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            <h3>Select files</h3>
-            <div ng-show="uploader.isHTML5">
-                <!-- 3. nv-file-over uploader="link" over-class="className" -->
-                <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
-                    Base drop zone
-                </div>
-            </div>
-            Multiple
-            <input type="file" nv-file-select="" uploader="uploader" multiple /><br/>
-        </div>
-        <div class="col-md-9" style="margin-bottom: 40px">
-            <h3>Upload queue</h3>
-            <p>Queue length: {{ uploader.queue.length }}</p>
+        <div style="position:fixed;bottom:0;left:0;width:100%;background: url(http://subtlepatterns.com/patterns/mochaGrunge.png);color:#ffffff">
             <table class="table">
                 <thead>
                 <tr>
@@ -36,7 +23,7 @@
                         </div>
                     </td>
                     <td class="text-center">
-                        <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                        <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"><a target="_blank" href="/#!/upload/{{ item.generatedURL }}">Link</a></i></span>
                         <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
                         <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
                     </td>
@@ -72,6 +59,18 @@
                 </button>
             </div>
         </div>
+        <div class="col-xs-6 col-md-offset-3">
+            <h3>Select files</h3>
+            <div ng-show="uploader.isHTML5">
+                <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                <div class="well my-drop-zone" nv-file-over="" uploader="uploader">
+                    Drag & Drop files here Or..
+                </div>
+            </div>
+            <input type="file" nv-file-select="" uploader="uploader" multiple />
+        </div>
+
+
     </div>
 </div>
 </div>

@@ -28,7 +28,7 @@ module.exports = function(grunt) {
       html: {
         files: paths.html,
         options: {
-          livereload: true,
+          livereload: false,
           interval: 500
         }
       },

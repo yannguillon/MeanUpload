@@ -14,13 +14,17 @@ var FileSchema = new Schema({
     },
     name: {
         type: String,
-        required: true,
-        trim: true
+        required: true
     },
 
     path: {
         type: String,
         required: true,
+        trim: true
+    },
+    tag: {
+        type: String,
+        required: false,
         trim: true
     },
 
@@ -41,6 +45,16 @@ var FileSchema = new Schema({
         type: String,
         required: false,
         trim: true
+    },
+
+    size: {
+        type: String,
+        required: false,
+        trim: true
+    },
+
+    key: {
+        type: String
     }
 });
 //
@@ -58,9 +72,10 @@ var FileSchema = new Schema({
 /**
  * Statics
  */
-FileSchema.statics.load = function(id, cb) {
+
+FileSchema.statics.load = function(url, cb) {
     this.findOne({
-        _id: id
+        url: url
     }).populate('user', 'name username').exec(cb);
 };
 
