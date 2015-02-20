@@ -3,6 +3,19 @@
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![Gitter](https://badges.gitter.im/JoinChat.svg)](https://gitter.im/linnovate/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+
+# MEANUpload
+
+## Introduction
+
+
+MEANUpload is a web interface to create a file hosting website within seconds. Using the MEAN stack, it is quick and easy to install (see the installation section for more information.
+
+## Technical challenges
+
+This project uses Amazon S3 for storage.
+The RAM footprint of each upload is reduced, as each part sent to the node.js server is automatically sent to Amazon S3 using its multipart-upload API (per 5MB parts)
+
 # MEAN
 
 MEAN is a framework for an easy starting point with [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. It is designed to give you a quick and organized way to start developing MEAN based web apps with useful modules like Mongoose and Passport pre-bundled and configured. We mainly try to take care of the connection points between existing popular frameworks and solve common integration problems.
